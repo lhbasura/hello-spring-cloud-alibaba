@@ -22,7 +22,7 @@ public class ConsumerController {
 
     @GetMapping(value = "/echo/app/name")
     public String echo() {
-        ServiceInstance serviceInstance = loadBalancerClient.choose("nacos-provider");
+        ServiceInstance serviceInstance = loadBalancerClient.choose("service-provider");
         String url = String.format("http://%s:%s/echo/%s", serviceInstance.getHost(), serviceInstance.getPort(), appName);
         return restTemplate.getForObject(url, String.class);
     }

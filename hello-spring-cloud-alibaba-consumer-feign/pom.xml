@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hello-spring-cloud-alibaba-consumer</artifactId>
+
+    <artifactId>hello-spring-cloud-alibaba-consumer-feign</artifactId>
+
     <properties>
         <spring-cloud-openfeign.version>2.0.0.RELEASE</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>2.0.0.RELEASE</spring-cloud-netflix.version>
@@ -44,7 +46,19 @@
             <version>1.1.0</version>
         </dependency>
 
-
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.lhbasura.hello.spring.cloud.alibaba.consumer.feign.FeignConsumerApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
